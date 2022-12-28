@@ -17,6 +17,7 @@ namespace B2CManagementService
             builder.Services.AddSingleton<IWhiteListDB, DomainDB>();
             builder.Services.AddSingleton<IBlackListDB, DomainDB>();
             //builder.Services.AddSingleton<DatabaseConfig>();
+            builder.Services.AddSingleton<IUserDB, UserDB>();
             builder.Services.AddSingleton<IB2CDB, DB>();
 
             var app = builder.Build();

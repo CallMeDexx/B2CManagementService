@@ -19,7 +19,6 @@ namespace B2CDB
                 return false;
             
             using var connection = DBUtils.GetConnection();
-            //cnn.Execute("insert into Table(val) values (@val)", new { val });
 
 
             var schema = MakeSchemaFromModel(domain);
@@ -30,8 +29,6 @@ namespace B2CDB
             var query = $"INSERT INTO {Constants.BlackListDomainsTable} ({fields}) VALUES ({values})";
 
             var result = connection.Execute(query, domain);
-            //var result = connection.Execute($"INSERT INTO {Constants.BlackListDomainsTable} ({Constants.DomainColumName}) VALUES(@{domain}), {domain}");
-            //var result = connection.Query<string>("SELECT * From Domains");
 
             return true;
         }
@@ -54,8 +51,6 @@ namespace B2CDB
             var query = $"INSERT INTO {Constants.WhiteListDomainsTable} ({fields}) VALUES ({values})";
 
             var result = connection.Execute(query, domain);
-            //var result = connection.Execute($"INSERT INTO {Constants.BlackListDomainsTable} ({Constants.DomainColumName}) VALUES(@{domain}), {domain}");
-            //var result = connection.Query<string>("SELECT * From Domains");
 
             return true;
         }

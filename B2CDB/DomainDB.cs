@@ -36,11 +36,10 @@ namespace B2CDB
         //TODO:
         public bool AddToWhiteList(string domain)
         {
-            if (IsBlackListed(domain))
+            if (IsWhiteListed(domain))
                 return false;
 
             using var connection = DBUtils.GetConnection();
-            //cnn.Execute("insert into Table(val) values (@val)", new { val });
 
 
             var schema = MakeSchemaFromModel(domain);

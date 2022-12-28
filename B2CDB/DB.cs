@@ -54,6 +54,7 @@ namespace B2CDB
             var isWhitelisted = _whiteListDB.IsWhiteListed(userMailDomain);
             var isBlacklisted = _blackListDB.IsBlackListed(userMailDomain);
 
+            //Should be?
             return isWhitelisted && !isBlacklisted;
                 
         }
